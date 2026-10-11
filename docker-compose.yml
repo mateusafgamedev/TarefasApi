@@ -1,0 +1,25 @@
+services:
+
+  LojaVirtualContainer:
+
+    image: mcr.microsoft.com/mssql/server:2022-latest
+
+    container_name: ApiTarefasContainer
+
+    environment:
+
+      ACCEPT_EULA: "Y"
+
+      SA_PASSWORD: "Str0ng@Sql2026!"
+
+    ports:
+
+      - "1433:1433"
+
+    volumes:
+
+      - ApiTarefasContainer_data:/var/opt/mssql
+
+volumes:
+
+  ApiTarefasContainer_data:
